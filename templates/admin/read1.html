@@ -1,0 +1,43 @@
+{% extends "admin/admin_base.html" %}
+        {% block content %}
+                        <table class="table table-striped-columns">
+
+       <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User name</th>
+      <th scope="col">Age</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Email</th>
+<!--      <th scope="col">Description</th>-->
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+<!--      <td>{{i.title}}</td>-->
+      <td>{{i.name}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.DOB}}</td>
+      <td>{{i.blood_group}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.phone_number}}</td>
+      <td>{{i.email}}</td>
+
+
+<!--      <td>{{i.date_field}}</td>-->
+        <td><a href="{% url 'delete' i.id %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Delete</a></td>
+        <td><a href="{% url 'update' i.id %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Update</a></td>
+    </tr>
+
+      {% endfor %}
+  </tbody>
+</table>
+                        {% endblock %}
+<!--

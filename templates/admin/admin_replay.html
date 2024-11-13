@@ -1,0 +1,38 @@
+{% extends "admin/admin_base.html" %}
+{% block content %}
+
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+
+<!--          login pop up-->
+            {% for message in messages %}
+    <div class="alert alert-primary" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+
+          <form method="POST">
+            {% csrf_token %}
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="text" id="form2Example1" class="form-control" name="Replay" />
+              <label class="form-label" for="form2Example1">Replay</label>
+            </div>
+
+            <!-- Password input -->
+
+
+            <!-- 2 column grid layout for inline styling -->
+
+            <!-- Submit button -->
+            <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Submit</button>
+
+          </form>
+
+        </div>
+      </div>
+
+
+<!-- Section: Design Block -->
+                        {% endblock %}

@@ -1,0 +1,41 @@
+{% extends "receiver/receiver_base.html" %}
+        {% block content %}
+                        <table class="table table-striped-columns">
+
+       <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User name</th>
+      <th scope="col">Age</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Email</th>
+<!--      <th scope="col">Description</th>-->
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+<!--      <td>{{i.title}}</td>-->
+      <td>{{i.name}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.DOB}}</td>
+      <td>{{i.blood_group}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.phone_number}}</td>
+      <td>{{i.email}}</td>
+
+
+<!--      <td>{{i.date_field}}</td>-->
+
+    </tr>
+
+      {% endfor %}
+  </tbody>
+</table>
+                        {% endblock %}
+<!--
